@@ -1,4 +1,4 @@
-#~/movie-service/app/database/db.py
+#~/movie-service/app/database/fakeDb.py
 
 fake_movie_db = [
 {

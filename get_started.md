@@ -30,12 +30,12 @@ test_db.db
 
 ## create a folder "app and a file inside it  requirements.txt
 
+- uvicorn
+- fastapi
+
 run 
 ```
 pip install -r requirements.txt
-
-uvicorn
-fastapi
 
 ```
 

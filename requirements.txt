@@ -5,6 +5,8 @@ requests
 uvicorn
 pymysql
 pydantic
+starlette
+
 
 #for template
 jinja2
@@ -14,9 +16,10 @@ jinja2
 # aiohttp
 
 #for database
-# sqlalchemy
-# sqlAlchemy
-# psycopg2
+databases
+sqlalchemy
+sqlAlchemy
+psycopg2
 
 #for loading environment variables
 # python-dotenv

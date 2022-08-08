@@ -1,24 +1,25 @@
 #~/movie-service/app/api/movies.py
 
-from typing import List, Union, Tuple
-from fastapi import Header, APIRouter,HTTPException
+# import the required packages.
+from typing import List, Tuple, Union,Dict
 
-from app.api.models import Movie, CreateUser
-from app.database.db import fake_movie_db
+from app.database.fakeDB.fakeDb import fake_movie_db
+from app.pydanticModel.models import  Movie
+from fastapi import APIRouter, Header, HTTPException
 
 #You can think of APIRouter as a "mini FastAPI" class.
 movies = APIRouter()
 
-@movies.get('/', response_model=List[Movie])
+@movies.get('/movie', response_model=Movie)
 async def index():
-    return fake_movie_db
+    return fake_movie_db[1]
 
-# @movies.get('/{id}', response_model=List[Movie])
-# async def getMovieById(id):
-#     id = int(id)
-#     if 'id' not in fake_movie_db:
-#         raise HTTPException('Movie Id no : {} not found'.format(id))
-#     return fake_movie_db[id]
+@movies.get('/{id}', response_model=Movie)
+async def getMovieById(id = int):
+    id = int(id)
+    if 'id' not in fake_movie_db:
+        raise HTTPException('Movie Id no : {} not found'.format(id))
+    return (fake_movie_db[1])
 
 @movies.post('/add', status_code=201)
 async def add_movie(payload: Movie):
