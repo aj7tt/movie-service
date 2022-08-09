@@ -48,3 +48,11 @@ We will store our project settings and configurations inside of this file named 
 
 #runnn
 uvicorn app.main:app --reload 
+
+
+
+'''
+To avoid confusion between the SQLAlchemy models and the Pydantic models, we will have the file 
+models.py with the Pydantic models , and the file schemas.movieDataSchema.py with the SQLAlchemy models.
+
+'''

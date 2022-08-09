@@ -57,7 +57,6 @@ class CreateUser(BaseModel):
     This is the description of user
     """
     name : str
-    Gender : Enum("male", "female")
     email : str
     password :str 
     confirm_password :str 

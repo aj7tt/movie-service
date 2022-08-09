@@ -16,16 +16,15 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 sqlalchemyDatabaseUrl = "mysql+pymysql://root:root@127.0.0.1:3306/PlatformDatadb"
 
 #Create engine instance
-engine = create_engine(
-    sqlalchemyDatabaseUrl, connect_args={"check_same_thread": False}
-)
+engine = create_engine(sqlalchemyDatabaseUrl)
 
 #Create a SessionLocal class
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+# Session = scoped_session(SessionLocal)
 
-Session = scoped_session(SessionLocal)
-db = declarative_base()
+#  create a Base class , use the function declarative_base() that returns a class
+Base = declarative_base()
 
 # database = Database(sqlalchemyDatabaseUrl)
 
