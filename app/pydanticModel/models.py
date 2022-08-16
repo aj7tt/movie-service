@@ -28,6 +28,10 @@ class Movie(BaseModel):
     Gross: Optional[str]=None
 
 
+    class Config:
+        orm_mode = True
+
+
     
 
     
@@ -39,20 +43,20 @@ class Movie(BaseModel):
     #     return value
     
     #validation for name , title of movie
-    @validator('title', check_fields=False)
-    def validateName(cls, value):
-        assert value.isalnum() or value.isspace() , 'must be alphanumeric and space only'
-        return value
+    # @validator('title', check_fields=False)
+    # def validateName(cls, value):
+    #     assert value.isalnum() or value.isspace() , 'must be alphanumeric and space only'
+    #     return value
 
-    #validation for Plot
-    @validator('plot')
-    def validatePlot(cls, space):
-        if ' ' not in space:
-            raise ValueError('must contain a space')
-        return space.title()
+    # #validation for Plot
+    # @validator('plot')
+    # def validatePlot(cls, space):
+    #     if ' ' not in space:
+    #         raise ValueError('must contain a space')
+    #     return space.title()
 
 #user details 
-class CreateUser(BaseModel):
+# class CreateUser(BaseModel):
     """
     This is the description of user
     """
