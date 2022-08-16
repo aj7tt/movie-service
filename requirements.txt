@@ -1,12 +1,12 @@
 
 fastapi
-mangum
 requests
 uvicorn
 pymysql
 pydantic
 starlette
 
+mangum
 
 #for template
 jinja2

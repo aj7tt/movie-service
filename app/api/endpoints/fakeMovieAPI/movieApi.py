@@ -10,9 +10,9 @@ from fastapi import APIRouter, Header, HTTPException
 #You can think of APIRouter as a "mini FastAPI" class.
 movies = APIRouter()
 
-@movies.get('/movie', response_model=Movie)
+@movies.get('/movieList', response_model=Movie)
 async def index():
-    return fake_movie_db[1]
+    return fake_movie_db
 
 @movies.get('/{id}', response_model=Movie)
 async def getMovieById(id = int):
