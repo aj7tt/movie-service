@@ -27,20 +27,5 @@ async def root():
         "Status_code: 2000K! "
     }
 
-
-# Dependency
-def get_db():
-    try:
-        db = SessionLocal()
-        yield db
-    finally:
-        db.close()
-
 #router for different api
 app.include_router(apiRouter)
-
-
-
-#main function
-# if __name__ == "__main__":
-#     uvicorn.run("main:app", host='127.0.0.1', port=8000, reload=True)
